@@ -1,0 +1,165 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="body.css">
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+function scrollto(div)
+
+
+{
+ $('html,body').animate(
+ {
+  scrollTop: $("#"+div).offset().top
+ },'slow');
+}
+function submitText()
+{
+    let activityname = (document.getElementsByName("IOBox").innerHTML);
+    console.log(activityname); 
+    document.getElementById(" ").innerHTML = activityname;
+}
+
+function getInputFromTextBox() {
+    var input = document.getElementById("IOBox").value;
+    alert(input);
+}
+
+$(document).ready(function() {
+    var table = $('#example').DataTable({
+        columnDefs: [{
+            orderable: false,
+            targets: [1,2,3]
+        }]
+    });
+ 
+    $('button').click( function() {
+        var data = table.$('input, select').serialize();
+        alert(
+            "The following data would have been submitted to the server: \n\n"+
+            data.substr( 0, 120 )+'...'
+        );
+        return false;
+    } );
+} );
+
+</script>
+</head>
+<body>
+
+<div id="header">
+ <li id="site_name">Time Managment</li>
+ <li onclick="scrollto('home');">HOME</li>
+ <li onclick="scrollto('aboutinfo');">ABOUT & INFO</li>
+ <li onclick="scrollto('activity');">ACTIVITY</li>
+</div>
+
+<div id="home">
+ <h1>Home<p></p></h1>
+</div>
+
+<div id="activity">
+    <h1>Input Activity</h1>
+
+
+    <button type="submit">Submit form</button>
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Activity</th>
+                    <th>Time</th>
+                    <th>Date</th>
+                    <th>Recreation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" id="row-1-Text" activity="row-1-Text" value="text"></td>
+                    <td><input type="time" id="row-1-Time" activity="row-1-Time" value="time"></td>
+                    <td><input type="date" id="row-1-Date" Activity="row-1-Date" value="date"></td>
+                    <td><select size="1" id="row-1-Recreation" Activity="row-1-Recreation">
+                        <option value="Work" selected="selected">
+                            Work
+                        </option>
+                        <option value="Leisure">
+                            Leisure
+                        </option>
+                    </select></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="row-1-Text" activity="row-1-Text" value="text"></td>
+                        <td><input type="time" id="row-1-Time" activity="row-1-Time" value="time"></td>
+                        <td><input type="date" id="row-1-Date" Activity="row-1-Date" value="date"></td>
+                        <td><select size="1" id="row-1-Recreation" Activity="row-1-Recreation">
+                            <option value="Work" selected="selected">
+                                Work
+                            </option>
+                            <option value="Leisure">
+                                Leisure
+                            </option>
+                        </select></td>
+                    </tr>
+                </tbody>
+
+                <tbody>
+                    <tr>
+                        <td><input type="text" id="row-1-Text" activity="row-1-Text" value="text"></td>
+                        <td><input type="time" id="row-1-Time" activity="row-1-Time" value="time"></td>
+                        <td><input type="date" id="row-1-Date" Activity="row-1-Date" value="date"></td>
+                        <td><select size="1" id="row-1-Recreation" Activity="row-1-Recreation">
+                            <option value="Work" selected="selected">
+                                Work
+                            </option>
+                            <option value="Leisure">
+                                Leisure
+                            </option>
+                        </select></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                 
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="row-1-Text" activity="row-1-Text" value="text"></td>
+                            <td><input type="time" id="row-1-Time" activity="row-1-Time" value="time"></td>
+                            <td><input type="date" id="row-1-Date" Activity="row-1-Date" value="date"></td>
+                            <td><select size="1" id="row-1-Recreation" Activity="row-1-Recreation">
+                                <option value="Work" selected="selected">
+                                    Work
+                                </option>
+                                <option value="Leisure">
+                                    Leisure
+                                </option>
+                            </select></td>
+                        </tr>
+                    </tbody>
+
+                    <tbody>
+                        <tr>
+                            <td><input type="text" id="row-1-Text" activity="row-1-Text" value="text"></td>
+                            <td><input type="time" id="row-1-Time" activity="row-1-Time" value="time"></td>
+                            <td><input type="date" id="row-1-Date" Activity="row-1-Date" value="date"></td>
+                            <td><select size="1" id="row-1-Recreation" Activity="row-1-Recreation">
+                                <option value="Work" selected="selected">
+                                    Work
+                                </option>
+                                <option value="Leisure">
+                                    Leisure
+                                </option>
+                            </select></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+
+
+                </tfoot>
+               
+            </tfoot>
+        </table>
+</div>
+
+
+</body>
+</html>
